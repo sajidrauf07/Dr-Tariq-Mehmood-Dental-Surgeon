@@ -82,6 +82,12 @@ export const siteConfig = {
     googleUrl: "https://maps.google.com/?q=Dr+Tariq+Mehmood+Dental+Surgeon+Mianwali",
   },
 
+  developer: {
+    name: "SN Tech Web",
+    url: "https://www.sntechweb.com/",
+    label: "Designed & Developed by",
+  },
+
   doctorProfile: {
     name: "Dr. Tariq Mehmood",
     title: "Dental Surgeon",

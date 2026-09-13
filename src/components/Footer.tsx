@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { siteConfig } from "@/config/siteConfig";
-import { MapPin, Phone, MessageCircle, Calendar, Sparkles, Heart } from "lucide-react";
+import { MapPin, Phone, MessageCircle, Calendar, Sparkles, Heart, ExternalLink } from "lucide-react";
 
 interface FooterProps {
   onOpenAppointmentModal: () => void;
@@ -139,12 +139,28 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppointmentModal }) => {
 
         </div>
 
-        {/* Legal & Medical Disclaimer Bar */}
-        <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.clinicName}. All rights reserved.
-          </p>
-          <p className="text-center md:text-right max-w-lg">
+        {/* Legal & Medical Disclaimer Bar with Developer Credit */}
+        <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+            <p className="text-slate-500">
+              © {new Date().getFullYear()} {siteConfig.clinicName}. All rights reserved.
+            </p>
+            <span className="hidden sm:inline text-slate-700">•</span>
+            <p className="flex items-center gap-1.5 text-slate-400">
+              <span>{siteConfig.developer.label}</span>
+              <a
+                href={siteConfig.developer.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sky-400 hover:text-sky-300 hover:underline inline-flex items-center gap-1 transition-colors"
+                title="Visit Developer Website"
+              >
+                <span>{siteConfig.developer.name}</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </p>
+          </div>
+          <p className="text-center md:text-right max-w-lg text-[11px] text-slate-500 leading-relaxed">
             Medical Disclaimer: Content on this site is for educational purposes and does not substitute professional medical diagnosis. Treatment plans are finalized upon clinical consultation.
           </p>
         </div>
