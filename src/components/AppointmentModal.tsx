@@ -97,7 +97,7 @@ ${message ? `- Note: ${message}` : ""}`;
                   placeholder="e.g. Muhammad Ali"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
+                  className="w-full px-4 py-3 sm:py-2.5 text-[16px] sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
                 />
               </div>
 
@@ -112,7 +112,7 @@ ${message ? `- Note: ${message}` : ""}`;
                   placeholder="0300 1234567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
+                  className="w-full px-4 py-3 sm:py-2.5 text-[16px] sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
                 />
               </div>
 
@@ -124,7 +124,7 @@ ${message ? `- Note: ${message}` : ""}`;
                 <select
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-                  className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
+                  className="w-full px-4 py-3 sm:py-2.5 text-[16px] sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
                 >
                   {siteConfig.services.map((s) => (
                     <option key={s.id} value={s.name}>
@@ -144,7 +144,7 @@ ${message ? `- Note: ${message}` : ""}`;
                     type="date"
                     value={preferredDate}
                     onChange={(e) => setPreferredDate(e.target.value)}
-                    className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
+                    className="w-full px-4 py-3 sm:py-2.5 text-[16px] sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
                   />
                 </div>
 
@@ -155,7 +155,7 @@ ${message ? `- Note: ${message}` : ""}`;
                   <select
                     value={preferredTime}
                     onChange={(e) => setPreferredTime(e.target.value)}
-                    className="w-full px-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
+                    className="w-full px-4 py-3 sm:py-2.5 text-[16px] sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
                   >
                     <option value="">Select Time Slot</option>
                     <option value="03:00 PM - 05:00 PM">03:00 PM - 05:00 PM (Afternoon)</option>
@@ -175,7 +175,7 @@ ${message ? `- Note: ${message}` : ""}`;
                   placeholder="Describe your tooth pain or request..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-4 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
+                  className="w-full px-4 py-3 sm:py-2.5 text-[16px] sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-900 dark:text-slate-100"
                 />
               </div>
 

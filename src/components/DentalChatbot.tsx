@@ -261,27 +261,36 @@ We advise calling ahead at 0300 4757123 to confirm your preferred slot.`,
 
   return (
     <>
-      {/* Floating Chatbot Launch Button (Adjusted for mobile to avoid covering action bar) */}
+      {/* Floating Chatbot Launch Button (Visible on desktop/tablet; on mobile triggered via bottom bar) */}
       <button
         onClick={toggleOpen}
         aria-label="Open Dr. Tariq Dental Assistant"
-        className="fixed bottom-20 sm:bottom-8 right-3 sm:right-6 z-30 p-3 sm:p-4 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 group border-2 border-white/80 dark:border-slate-800"
+        className="hidden sm:flex fixed bottom-8 right-6 z-30 p-4 rounded-full bg-gradient-to-r from-sky-600 to-cyan-600 text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 items-center gap-2 group border-2 border-white/80 dark:border-slate-800"
       >
         {isOpen ? (
-          <X className="w-5 h-5 sm:w-6 sm:h-6" />
+          <X className="w-6 h-6" />
         ) : (
           <>
-            <Bot className="w-5 h-5 sm:w-6 sm:h-6" />
-            <span className="hidden sm:inline text-xs font-bold tracking-wide pr-1">
+            <Bot className="w-6 h-6" />
+            <span className="text-xs font-bold tracking-wide pr-1">
               Dental Assistant
             </span>
           </>
         )}
       </button>
 
+      {/* Mobile backdrop overlay when chatbot is open */}
+      {isOpen && (
+        <div
+          onClick={toggleOpen}
+          className="sm:hidden fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-40 transition-opacity animate-in fade-in duration-200"
+          aria-hidden="true"
+        />
+      )}
+
       {/* Chatbot Window */}
       {isOpen && (
-        <div className="fixed bottom-[72px] sm:bottom-24 right-2 sm:right-6 z-50 w-[calc(100vw-16px)] sm:w-[390px] h-[520px] max-h-[82vh] bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
+        <div className="fixed inset-x-2 bottom-[68px] sm:inset-x-auto sm:bottom-24 sm:right-6 z-50 w-auto sm:w-[390px] h-[78vh] sm:h-[520px] max-h-[600px] bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           
           {/* Chatbot Header */}
           <div className="bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 dark:from-slate-950 dark:via-sky-950 dark:to-slate-950 p-3.5 sm:p-4 text-white flex items-center justify-between border-b border-sky-900/50">
@@ -397,7 +406,7 @@ We advise calling ahead at 0300 4757123 to confirm your preferred slot.`,
               placeholder="Ask about dental services or timings..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="flex-1 px-3 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-800 dark:text-slate-100"
+              className="flex-1 px-3 py-2.5 sm:py-2 text-[16px] sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-800 dark:text-slate-100"
             />
             <button
               type="submit"
