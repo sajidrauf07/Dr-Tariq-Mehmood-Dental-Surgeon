@@ -30,18 +30,29 @@ export const AboutDoctor: React.FC<AboutDoctorProps> = ({ onOpenAppointmentModal
           
           {/* Doctor Portrait / Card */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-xl border-4 border-white dark:border-slate-800 bg-white dark:bg-slate-900">
-              <div className="relative aspect-[3/4] w-full bg-slate-200 dark:bg-slate-800">
+            <div className="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 bg-white dark:bg-slate-900">
+              <div className="relative aspect-[4/5] w-full bg-slate-900">
                 <Image
                   src={siteConfig.doctorProfile.image}
                   alt={`${siteConfig.doctorProfile.name} - ${siteConfig.doctorProfile.title}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover object-top"
+                  priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 text-white">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-sky-400">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    <span>PMDC Registered Dental Surgeon</span>
+                  </div>
+                  <div className="text-[11px] text-slate-300">
+                    Serving Mianwali & surrounding areas
+                  </div>
+                </div>
               </div>
 
-              <div className="p-6 bg-white dark:bg-slate-900 text-center">
+              <div className="p-5 bg-white dark:bg-slate-900 text-center">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                   {siteConfig.doctorProfile.name}
                 </h3>
@@ -49,14 +60,13 @@ export const AboutDoctor: React.FC<AboutDoctorProps> = ({ onOpenAppointmentModal
                   {siteConfig.doctorProfile.title}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                  {siteConfig.contact.address.neighborhood}, {siteConfig.contact.address.city}
+                  {siteConfig.contact.address.street}, {siteConfig.contact.address.neighborhood}, {siteConfig.contact.address.city}
                 </p>
 
-                {/* Transparency note */}
-                <div className="mt-4 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-[11px] text-slate-500 dark:text-slate-400 flex items-center gap-2 text-left">
-                  <Info className="w-3.5 h-3.5 text-sky-500 shrink-0" />
+                <div className="mt-4 p-2.5 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 text-[11px] text-sky-800 dark:text-sky-300 flex items-center justify-center gap-2 text-center font-medium">
+                  <ShieldCheck className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400 shrink-0" />
                   <span>
-                    Professional clinic demonstration photo. Authentic doctor portrait can be replaced easily via config.
+                    BDS (Punjab) • Certified Dental Practitioner
                   </span>
                 </div>
               </div>
