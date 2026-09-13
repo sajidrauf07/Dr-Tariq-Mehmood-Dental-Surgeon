@@ -27,6 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAppointmentModal }) => {
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Treatments", href: "#featured" },
+    { name: "Symptom Check", href: "#symptom-checker" },
     { name: "Why Us", href: "#why-choose-us" },
     { name: "Reviews", href: "#reviews" },
     { name: "FAQ", href: "#faq" },

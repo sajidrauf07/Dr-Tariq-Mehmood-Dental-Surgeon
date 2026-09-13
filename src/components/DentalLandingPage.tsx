@@ -8,6 +8,7 @@ import { TrustStats } from "./TrustStats";
 import { AboutDoctor } from "./AboutDoctor";
 import { Services } from "./Services";
 import { FeaturedTreatments } from "./FeaturedTreatments";
+import { InteractiveSmileStudio } from "./InteractiveSmileStudio";
 import { WhyChooseUs } from "./WhyChooseUs";
 import { PatientJourney } from "./PatientJourney";
 import { ReviewsAndTestimonials } from "./ReviewsAndTestimonials";
@@ -46,11 +47,12 @@ export const DentalLandingPageContent: React.FC = () => {
 
       {/* Main Content Sections */}
       <main className="flex-1 pb-16 sm:pb-0">
-        <Hero onOpenAppointmentModal={() => handleOpenAppointmentModal()} />
+        <Hero onOpenAppointmentModal={(serviceName) => handleOpenAppointmentModal(serviceName)} />
         <TrustStats />
         <AboutDoctor onOpenAppointmentModal={() => handleOpenAppointmentModal()} />
         <Services onOpenAppointmentModal={(serviceName) => handleOpenAppointmentModal(serviceName)} />
         <FeaturedTreatments onOpenAppointmentModal={(serviceName) => handleOpenAppointmentModal(serviceName)} />
+        <InteractiveSmileStudio onOpenAppointmentModal={(serviceName) => handleOpenAppointmentModal(serviceName)} />
         <WhyChooseUs />
         <PatientJourney />
         <ReviewsAndTestimonials />
