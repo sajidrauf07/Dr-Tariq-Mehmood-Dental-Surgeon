@@ -30,46 +30,71 @@ export const AboutDoctor: React.FC<AboutDoctorProps> = ({ onOpenAppointmentModal
           
           {/* Doctor Portrait / Card */}
           <div className="lg:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 bg-white dark:bg-slate-900">
-              <div className="relative aspect-[4/5] w-full bg-slate-900">
+            <div className="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900">
+              
+              {/* Header Banner: Clinic Atmosphere */}
+              <div className="relative h-32 sm:h-36 w-full overflow-hidden bg-gradient-to-r from-sky-700 via-sky-600 to-cyan-600">
                 <Image
-                  src={siteConfig.doctorProfile.image}
-                  alt={`${siteConfig.doctorProfile.name} - ${siteConfig.doctorProfile.title}`}
+                  src="/images/clinic.jpg"
+                  alt="Dr. Tariq Mehmood Dental Clinic Mianwali"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover object-top"
-                  priority
+                  className="object-cover opacity-35 mix-blend-overlay"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-sky-400">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                    <span>PMDC Registered Dental Surgeon</span>
-                  </div>
-                  <div className="text-[11px] text-slate-300">
-                    Serving Mianwali & surrounding areas
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-[11px] font-bold text-white flex items-center gap-1.5 border border-white/20">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>PMDC Verified</span>
                 </div>
               </div>
 
-              <div className="p-5 bg-white dark:bg-slate-900 text-center">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                  {siteConfig.doctorProfile.name}
-                </h3>
-                <p className="text-sm font-semibold text-sky-600 dark:text-sky-400 mb-1">
-                  {siteConfig.doctorProfile.title}
-                </p>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  {siteConfig.contact.address.street}, {siteConfig.contact.address.neighborhood}, {siteConfig.contact.address.city}
-                </p>
-
-                <div className="mt-4 p-2.5 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 text-[11px] text-sky-800 dark:text-sky-300 flex items-center justify-center gap-2 text-center font-medium">
-                  <ShieldCheck className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400 shrink-0" />
-                  <span>
-                    BDS (Punjab) • Certified Dental Practitioner
-                  </span>
+              {/* Centered Doctor Avatar with High Retina Sharpness */}
+              <div className="relative flex flex-col items-center px-6 pb-6 pt-0 text-center">
+                <div className="relative -mt-16 sm:-mt-20 w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 ring-4 ring-sky-500/25 bg-slate-100 dark:bg-slate-800 shrink-0">
+                  <Image
+                    src="/images/doctor-avatar.png"
+                    alt={`${siteConfig.doctorProfile.name} - ${siteConfig.doctorProfile.title}`}
+                    fill
+                    sizes="160px"
+                    className="object-cover object-top"
+                    priority
+                  />
                 </div>
+
+                <div className="mt-3.5">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    {siteConfig.doctorProfile.name}
+                  </h3>
+                  <p className="text-sm font-semibold text-sky-600 dark:text-sky-400 mt-0.5">
+                    {siteConfig.doctorProfile.title}
+                  </p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    {siteConfig.contact.address.street}, {siteConfig.contact.address.neighborhood}, {siteConfig.contact.address.city}
+                  </p>
+                </div>
+
+                {/* Verified Credentials Pills */}
+                <div className="w-full mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2 text-xs">
+                  <div className="flex items-center justify-center gap-1.5 text-slate-700 dark:text-slate-300 font-medium">
+                    <GraduationCap className="w-4 h-4 text-sky-600 shrink-0" />
+                    <span>BDS — University of the Punjab, Lahore</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-1.5 text-slate-600 dark:text-slate-400 text-[11px]">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                    <span>Ex-Demonstrator Montmorency & DHQ Mianwali</span>
+                  </div>
+                </div>
+
+                {/* Direct Action Button */}
+                <button
+                  onClick={onOpenAppointmentModal}
+                  className="w-full mt-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-md shadow-sky-600/25 flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Consultation With Dr. Tariq</span>
+                </button>
               </div>
+
             </div>
           </div>
 

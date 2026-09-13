@@ -565,23 +565,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAppointmentModal }) => {
               {/* TAB 3: DOCTOR PROFILE & VERIFIED CLINIC CONSULTATION */}
               {activeTab === "doctorProfile" && (
                 <div className="p-4 sm:p-5">
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-700 mb-3 bg-slate-100 dark:bg-slate-800">
-                    <Image
-                      src="/images/doctor.jpg"
-                      alt="Dr. Tariq Mehmood Dental Surgeon"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-top"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                    
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <div className="text-sm font-bold flex items-center gap-1.5">
+                  <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-700 mb-3 bg-gradient-to-r from-sky-900 via-slate-900 to-sky-950 p-4 flex items-center gap-4 text-white">
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden shadow-xl border-2 border-white ring-4 ring-sky-400/30 shrink-0 bg-slate-800">
+                      <Image
+                        src="/images/doctor-avatar.png"
+                        alt="Dr. Tariq Mehmood Dental Surgeon"
+                        fill
+                        sizes="96px"
+                        className="object-cover object-top"
+                        priority
+                      />
+                    </div>
+                    <div>
+                      <div className="text-base sm:text-lg font-bold flex items-center gap-1.5">
                         <UserCheck className="w-4 h-4 text-sky-400" />
                         <span>{siteConfig.doctorName}</span>
                       </div>
-                      <div className="text-xs text-slate-200">
+                      <div className="text-xs text-sky-200 font-medium">
                         {siteConfig.designation} • PMDC Verified
+                      </div>
+                      <div className="text-[11px] text-slate-300 mt-1 flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-sky-400" />
+                        <span>Civil Lines, Mianwali</span>
                       </div>
                     </div>
                   </div>
